@@ -19,10 +19,14 @@ h1 {
   font-size: 4rem;
 }
 
+.hidden {
+  display: none !important;
+}
+
 #creatures li {
   display: flex;
   width: 700px;
-  gap: 30px;
+  gap: 50px;
   justify-content: space-around;
   font-family: "Lato", Arial, Helvetica, sans-serif;
   align-items: center;
@@ -57,4 +61,49 @@ h1 {
   width: 120px;
   height: 70px;
   font-family: "Agu Display", Arial, Helvetica, sans-serif;
+}
+
+#heroes li {
+  display: flex;
+  gap: 50px;
+  flex-shrink: 0;
+  width: 700px;
+  min-height: 150px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Agu Display", Arial, Helvetica, sans-serif;
+}
+
+#heroes img {
+  width: 60px;
+  height: 60px;
+}
+
+h5 {
+  width: 150px;
+  font-size: 16px;
+}
+
+#heroes span {
+  display: none;
+}
+
+.scroll {
+  width: 77px;
+  height: 40px;
+  background: url(images/rolled\ up\ script.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 12px;
+  border: 1px solid green;
+}
+
+.scroll:not(:hover) {
+  filter: brightness(50%);
+  transition: 400ms;
+}
+
+.scroll:hover {
+  transition: 400ms;
+  cursor: pointer;
 }
