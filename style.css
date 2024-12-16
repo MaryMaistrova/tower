@@ -22,6 +22,7 @@ h1 {
 #creatures li {
   display: flex;
   width: 700px;
+  gap: 30px;
   justify-content: space-around;
   font-family: "Lato", Arial, Helvetica, sans-serif;
   align-items: center;
@@ -30,6 +31,7 @@ h1 {
 #creatures p {
   text-align: left;
   letter-spacing: 1.5px;
+  line-height: 1.5;
 }
 
 .icon>img {
@@ -42,6 +44,7 @@ h1 {
 }
 
 #creatures button {
+  flex-shrink: 0;
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -51,7 +54,7 @@ h1 {
   margin: 10px;
   cursor: pointer;
   border-radius: 12px;
-  width: 220px;
+  width: 120px;
   height: 70px;
   font-family: "Agu Display", Arial, Helvetica, sans-serif;
 }
