@@ -1,22 +1,118 @@
 body {
+  margin: 0;
+  padding: 0;
   background-color: whitesmoke;
 }
 
+:root {
+  --bar-width: 30px;
+  --bar-height: 4px;
+  --ham-gap: 4px;
+  --ham-margin: 22px;
+  --timing: 0.3s ease-in-out;
+  --total-height: calc(var(--ham-gap) * 2 + var(--bar-height) * 3);
+}
+
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   background-color: seagreen;
 }
 
 h1 {
   margin: 0;
+  padding-left: 120px;
+  padding-right: 120px;
   font-family: "Agu Display", Arial, Helvetica, sans-serif;
-  font-size: 4rem;
+  font-size: 3rem;
+}
+
+.ham {
+  --x-width: calc(var(--total-height) * 1.41421356237);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ham-gap);
+  width: max-content;
+  position:absolute;
+  top: var(--ham-margin);
+  left: var(--ham-margin);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.ham::before, .ham::after{
+  box-sizing: border-box;
+}
+
+.ham input {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.ham input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.ham::before, .ham::after, .ham input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: black;
+  border-radius: 999px;
+  transform-origin: left center;
+  transition: opacity var(--timing), width var(--timing), rotate var(--timing), translate var(--timing), background-color var(--timing), top var(--timing);
+}
+
+.ham:has(input:checked)::before{
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+  background-color: seagreen;
+}
+
+.ham:has(input:checked)::after{
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+  background-color: seagreen;
+}
+
+.sidebar {
+  padding: 0.5rem 1rem;
+  position: absolute;
+  padding-top: 50px;
+  top: -100%;
+  left: 6px;
+  text-align: left;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: cadetblue;
+  background: url(images/for-burger.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 85px;
+  height: 15vh;
+  transition: 0.3s ease-in-out;
+}
+
+.ham:has(input:checked) + .sidebar {
+  top: 0;
+  transition: 0.3s ease-in-out;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .hidden {
