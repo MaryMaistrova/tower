@@ -113,6 +113,11 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: cadetblue;
 }
 
 .hidden {
@@ -121,6 +126,7 @@ nav {
 
 #creatures li {
   display: flex;
+  min-height: 250px;
   width: 700px;
   gap: 50px;
   justify-content: space-around;
@@ -141,6 +147,8 @@ nav {
 
 .icon>span {
   font-family: "Agu Display", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 #creatures button {
