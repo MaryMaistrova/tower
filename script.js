@@ -26,3 +26,14 @@ btnsDown.forEach(btn => {
     thatLI.classList.remove("hidden");
   });
 });
+
+const btnsAddInfo = Array.from(document.getElementsByClassName("scroll"));
+
+btnsAddInfo.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const thisSpan = btn.parentNode.nextElementSibling;
+    thisSpan.classList.toggle("additional");
+    const secondSpan = btn.parentNode.nextElementSibling.nextElementSibling;
+    secondSpan.classList.toggle("additional");
+  });
+});
