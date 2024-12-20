@@ -169,10 +169,20 @@ a {
 
 #heroes li {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
   gap: 50px;
   flex-shrink: 0;
   width: 700px;
   min-height: 150px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Agu Display", Arial, Helvetica, sans-serif;
+}
+
+.initial {
+  display: flex;
+  gap: 50px;
   align-items: center;
   justify-content: center;
   font-family: "Agu Display", Arial, Helvetica, sans-serif;
@@ -186,10 +196,6 @@ a {
 h5 {
   width: 150px;
   font-size: 16px;
-}
-
-#heroes span {
-  display: none;
 }
 
 .scroll {
@@ -210,4 +216,11 @@ h5 {
 .scroll:hover {
   transition: 400ms;
   cursor: pointer;
+}
+
+#heroes span {
+  text-align: left;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  font-size: medium;
 }
