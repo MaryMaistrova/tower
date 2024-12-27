@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
+  background-color: rgb(135, 133, 133);
+  color: rgb(40, 41, 41);
 }
 
 :root {
@@ -9,7 +10,7 @@ body {
   --bar-height: 4px;
   --ham-gap: 4px;
   --ham-margin: 22px;
-  --timing: 0.3s ease-in-out;
+  --timing: 0.2s ease-in-out;
   --total-height: calc(var(--ham-gap) * 2 + var(--bar-height) * 3);
 }
 
@@ -20,9 +21,13 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  max-width: 900px;
+  width: innerWidth;
   margin: 0 auto;
   background-color: seagreen;
+}
+
+canvas {
+  display: block;
 }
 
 h1 {
@@ -30,7 +35,7 @@ h1 {
   padding-left: 120px;
   padding-right: 120px;
   font-family: "Agu Display", Arial, Helvetica, sans-serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 .ham {
@@ -39,14 +44,15 @@ h1 {
   flex-direction: column;
   gap: var(--ham-gap);
   width: max-content;
-  position:absolute;
+  position: absolute;
   top: var(--ham-margin);
   left: var(--ham-margin);
   z-index: 2;
   cursor: pointer;
 }
 
-.ham::before, .ham::after{
+.ham::before,
+.ham::after {
   box-sizing: border-box;
 }
 
@@ -63,7 +69,9 @@ h1 {
   width: 0;
 }
 
-.ham::before, .ham::after, .ham input {
+.ham::before,
+.ham::after,
+.ham input {
   content: "";
   width: var(--bar-width);
   height: var(--bar-height);
@@ -73,14 +81,14 @@ h1 {
   transition: opacity var(--timing), width var(--timing), rotate var(--timing), translate var(--timing), background-color var(--timing), top var(--timing);
 }
 
-.ham:has(input:checked)::before{
+.ham:has(input:checked)::before {
   rotate: 45deg;
   width: var(--x-width);
   translate: 0 calc(var(--bar-height) / -2);
   background-color: seagreen;
 }
 
-.ham:has(input:checked)::after{
+.ham:has(input:checked)::after {
   rotate: -45deg;
   width: var(--x-width);
   translate: 0 calc(var(--bar-height) / 2);
@@ -101,12 +109,10 @@ h1 {
   background-size: contain;
   max-width: 85px;
   height: 15vh;
-  transition: 0.3s ease-in-out;
 }
 
-.ham:has(input:checked) + .sidebar {
+.ham:has(input:checked)+.sidebar {
   top: 0;
-  transition: 0.3s ease-in-out;
 }
 
 nav {
@@ -115,9 +121,16 @@ nav {
   gap: 5px;
   cursor: pointer;
 }
+
 a {
   text-decoration: none;
   color: cadetblue;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hidden {
@@ -127,7 +140,7 @@ a {
 #creatures li {
   display: flex;
   min-height: 250px;
-  width: 700px;
+  width: 900px;
   gap: 50px;
   justify-content: space-around;
   font-family: "Lato", Arial, Helvetica, sans-serif;
@@ -135,6 +148,7 @@ a {
 }
 
 #creatures p {
+  font-size: 18px;
   text-align: left;
   letter-spacing: 1.5px;
   line-height: 1.5;
@@ -173,7 +187,7 @@ a {
   margin-bottom: 50px;
   gap: 50px;
   flex-shrink: 0;
-  width: 700px;
+  width: 900px;
   min-height: 150px;
   align-items: center;
   justify-content: center;
@@ -182,7 +196,7 @@ a {
 
 .initial {
   display: flex;
-  gap: 50px;
+  gap: 150px;
   align-items: center;
   justify-content: center;
   font-family: "Agu Display", Arial, Helvetica, sans-serif;
@@ -227,4 +241,26 @@ h5 {
 
 .additional {
   display: none;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.illustrations {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.illustrations>img {
+  transition: 400ms;
+}
+
+.illustrations>img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 400ms;
 }
