@@ -23,7 +23,7 @@ body {
   text-align: center;
   width: innerWidth;
   margin: 0 auto;
-  background-color: seagreen;
+  background-color: rgb(95, 159, 121);
 }
 
 canvas {
@@ -85,14 +85,15 @@ h1 {
   rotate: 45deg;
   width: var(--x-width);
   translate: 0 calc(var(--bar-height) / -2);
-  background-color: seagreen;
+  background-color: rgb(95, 159, 121);
+  ;
 }
 
 .ham:has(input:checked)::after {
   rotate: -45deg;
   width: var(--x-width);
   translate: 0 calc(var(--bar-height) / 2);
-  background-color: seagreen;
+  background-color: rgb(95, 159, 121);
 }
 
 .sidebar {
@@ -125,6 +126,15 @@ nav {
 a {
   text-decoration: none;
   color: cadetblue;
+}
+
+.text-block p {
+  font-family: "Smooch Sans", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  margin: 70px 150px 100px;
 }
 
 ul {
@@ -163,11 +173,16 @@ ul {
   font-family: "Agu Display", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
+  color: #1d351d;
+}
+
+.chunk p {
+  color: #1d351d;
 }
 
 #creatures button {
   flex-shrink: 0;
-  background-color: #4CAF50;
+  background-color: #3b693b;
   border: none;
   color: white;
   text-align: center;
@@ -179,6 +194,10 @@ ul {
   width: 120px;
   height: 70px;
   font-family: "Agu Display", Arial, Helvetica, sans-serif;
+}
+
+#creatures li {
+  border-bottom: 3px ridge #3b693b;
 }
 
 #heroes li {
@@ -200,16 +219,19 @@ ul {
   align-items: center;
   justify-content: center;
   font-family: "Agu Display", Arial, Helvetica, sans-serif;
+  border-top: 3px ridge gray;
 }
 
 #heroes img {
   width: 60px;
   height: 60px;
+  opacity: 80%;
 }
 
 h5 {
   width: 150px;
   font-size: 16px;
+  border-bottom: 3px ridge gray;
 }
 
 .scroll {
